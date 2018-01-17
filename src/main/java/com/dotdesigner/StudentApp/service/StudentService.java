@@ -39,7 +39,7 @@ public class StudentService {
 			page = 1;
 		}
 
-		Pageable pageRequest = new PageRequest(page, limit);
+		Pageable pageRequest = new PageRequest(--page, limit);
 
 		Page<Student> pageStudents = studentRepository.findAll(pageRequest);
 
