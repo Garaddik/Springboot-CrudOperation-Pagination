@@ -32,7 +32,7 @@ public class StudentController {
 		studentService.addStudent(student);
 	}
 
-	@RequestMapping
+	@RequestMapping(method = RequestMethod.GET)
 	public List<Student> getstudents(@RequestParam("page") int page) {
 		return studentService.getstudents(page);
 	}
@@ -48,7 +48,7 @@ public class StudentController {
 		studentService.updateStudent(studentId, student);
 	}
 
-	@RequestMapping("/{studentid}")
+	@RequestMapping(value = "/{studentid}", method = RequestMethod.GET)
 	public Student studentDetails(@PathVariable("studentid") long studentId) {
 		return studentService.studentDetails(studentId);
 	}
